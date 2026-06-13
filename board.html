@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DN Ludo Board</title>
+
+<style>
+body{
+margin:0;
+background:#0b0b3b;
+font-family:Arial,sans-serif;
+text-align:center;
+color:white;
+}
+
+h1{
+color:gold;
+margin-top:15px;
+}
+
+.board{
+width:340px;
+height:340px;
+margin:20px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+border:4px solid white;
+}
+
+.red{background:red;}
+.green{background:green;}
+.yellow{background:gold;}
+.blue{background:blue;}
+
+.home{
+margin:20px;
+background:white;
+border-radius:10px;
+height:120px;
+}
+
+.dice{
+font-size:60px;
+margin-top:20px;
+}
+
+.roll{
+padding:15px 35px;
+font-size:20px;
+font-weight:bold;
+background:gold;
+border:none;
+border-radius:30px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎲 DN LUDO</h1>
+
+<div class="board">
+<div class="red"><div class="home"></div></div>
+<div class="green"><div class="home"></div></div>
+<div class="blue"><div class="home"></div></div>
+<div class="yellow"><div class="home"></div></div>
+</div>
+
+<div class="dice" id="dice">🎲</div>
+
+<button class="roll" onclick="rollDice()">
+ROLL DICE
+</button>
+
+<script>
+function rollDice(){
+let num=Math.floor(Math.random()*6)+1;
+document.getElementById("dice").innerHTML=num;
+}
+</script>
+
+</body>
+</html>
