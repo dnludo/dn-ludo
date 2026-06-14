@@ -1,124 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DN Ludo Classic</title>
-<style>
-body{
-margin:0;
-background:#0a0a4f;
-font-family:Arial,sans-serif;
-text-align:center;
-color:white;
-}
 
-h1{
-color:gold;
-margin:15px 0;
-}
-
-.board{
-width:390px;
-height:390px;
-margin:auto;
-background:white;
-border:4px solid white;
-display:grid;
-grid-template-columns:repeat(15,1fr);
-grid-template-rows:repeat(15,1fr);
-}
-
-.cell{
-border:1px solid #ddd;
-}
-
-.red{background:red;}
-.green{background:green;}
-.yellow{background:gold;}
-.blue{background:blue;}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>🎲 DN LUDO</h1>
-<div class="board">
-
-<div class="cell red"></div>
-<div class="cell red"></div>
-<div class="cell red"></div>
-<div class="cell red"></div>
-<div class="cell red"></div>
-
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-
-<div class="cell green"></div>
-<div class="cell green"></div>
-<div class="cell green"></div>
-<div class="cell green"></div>
-<div class="cell green"></div>
-
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-
+<div class="header">
+🎲 DN LUDO
 </div>
-<div style="margin-top:20px;">
+
+<div id="board"></div>
+
+<div class="panel">
 <h2 id="turn">Red Turn</h2>
 
-<div id="dice" style="
-font-size:60px;
-margin:15px;
-">🎲</div>
+<div id="dice">🎲</div>
 
-<button onclick="rollDice()" style="
-padding:15px 35px;
-font-size:20px;
-border:none;
-border-radius:30px;
-background:gold;
-font-weight:bold;
-">
+<button onclick="rollDice()">
 ROLL DICE
 </button>
 
-<h3 id="result">Roll Dice</h3>
+<p id="status"></p>
 </div>
 
-<script>
-let player=0;
-let players=["Red","Green","Yellow","Blue"];
-
-function rollDice(){
-
-let num=Math.floor(Math.random()*6)+1;
-
-document.getElementById("dice").innerHTML=num;
-
-document.getElementById("result").innerHTML=
-players[player]+" rolled "+num;
-
-if(num!==6){
-player=(player+1)%4;
-}
-
-document.getElementById("turn").innerHTML=
-players[player]+" Turn";
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
