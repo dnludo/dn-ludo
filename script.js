@@ -19,8 +19,9 @@ let number = Math.floor(Math.random()*6)+1;
 
 dice.innerHTML = number;
 
-document.getElementById("status").innerHTML =
-players[currentPlayer] + " rolled " + number;
+document.getElementById("status").textContent = players[currentPlayer] + " rolled " + number;
+
+
 
 if(number !== 6){
 currentPlayer++;
