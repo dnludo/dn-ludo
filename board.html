@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DN Ludo Classic</title>
-
 <style>
 body{
 margin:0;
@@ -22,162 +21,81 @@ margin:15px 0;
 .board{
 width:390px;
 height:390px;
-
-
-
 margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-grid-template-rows:repeat(3,1fr);
-border:4px solid white;
-}
-
-.red{background:#ff2222;}
-.green{background:#00aa00;}
-.yellow{background:#ffd700;}
-.blue{background:#0066ff;}
-.center{background:white;}
-
-.home{
-width:70%;
-height:70%;
 background:white;
-margin:auto;
-margin-top:15%;
-border-radius:15px;
+border:4px solid white;
 display:grid;
-grid-template-columns:1fr 1fr;
-grid-template-rows:1fr 1fr;
-gap:10px;
-padding:10px;
+grid-template-columns:repeat(15,1fr);
+grid-template-rows:repeat(15,1fr);
 }
 
-.token{
-width:28px;
-height:28px;
-border-radius:50%;
-margin:auto;
+.cell{
+border:1px solid #ddd;
 }
 
-.r{background:red;}
-.g{background:green;}
-.y{background:gold;}
-.b{background:blue;}
+.red{background:red;}
+.green{background:green;}
+.yellow{background:gold;}
+.blue{background:blue;}
 
-.center{
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:40px;
-}
-
-.controls{
-margin-top:25px;
-}
-
-#dice{
-font-size:55px;
-margin-bottom:15px;
-}
-
-button{
-padding:15px 40px;
-font-size:20px;
-font-weight:bold;
-background:gold;
-border:none;
-border-radius:40px;
-}
-@keyframes shake {
-0% {transform:rotate(0deg);}
-25% {transform:rotate(20deg);}
-50% {transform:rotate(-20deg);}
-75% {transform:rotate(20deg);}
-100% {transform:rotate(0deg);}
-}
-
-.shake{
-animation:shake 0.5s;
-}
 </style>
 </head>
-
 <body>
 
 <h1>🎲 DN LUDO</h1>
-
 <div class="board">
 
-<div class="red">
-<div class="home">
-<div class="token r"></div>
-<div class="token r"></div>
-<div class="token r"></div>
-<div class="token r"></div>
-</div>
-</div>
+<div class="cell red"></div>
+<div class="cell red"></div>
+<div class="cell red"></div>
+<div class="cell red"></div>
+<div class="cell red"></div>
 
-<div></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
 
-<div class="green">
-<div class="home">
-<div class="token g"></div>
-<div class="token g"></div>
-<div class="token g"></div>
-<div class="token g"></div>
+<div class="cell green"></div>
+<div class="cell green"></div>
+<div class="cell green"></div>
+<div class="cell green"></div>
+<div class="cell green"></div>
+
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+
 </div>
-</div>
+<div style="margin-top:20px;">
+<h2 id="turn">Red Turn</h2>
 
-<div></div>
+<div id="dice" style="
+font-size:60px;
+margin:15px;
+">🎲</div>
 
-<div class="center">
-<div style="
-width:100%;
-height:100%;
-background:
-linear-gradient(45deg,
-red 25%,
-green 25%,
-green 50%,
-yellow 50%,
-yellow 75%,
-blue 75%);
+<button onclick="rollDice()" style="
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:gold;
+font-weight:bold;
 ">
-</div>
-</div>
-
-<div></div>
-
-<div class="blue">
-<div class="home">
-<div class="token b"></div>
-<div class="token b"></div>
-<div class="token b"></div>
-<div class="token b"></div>
-</div>
-</div>
-
-<div></div>
-
-<div class="yellow">
-<div class="home">
-<div class="token y"></div>
-<div class="token y"></div>
-<div class="token y"></div>
-<div class="token y"></div>
-</div>
-</div>
-
-</div>
-
-<div class="controls">
-<div id="dice">🎲</div>
-
-<button onclick="rollDice()">
 ROLL DICE
 </button>
 
-<h3 id="turn">Red Turn</h3>
+<h3 id="result">Roll Dice</h3>
 </div>
 
 <script>
@@ -186,31 +104,19 @@ let players=["Red","Green","Yellow","Blue"];
 
 function rollDice(){
 
-let dice=document.getElementById("dice");
-
-dice.classList.add("shake");
-dice.innerHTML="🎲";
-setTimeout(()=>{
-dice.classList.add("shake");
 let num=Math.floor(Math.random()*6)+1;
 
-dice.innerHTML=num;
+document.getElementById("dice").innerHTML=num;
 
-dice.classList.remove("shake");
+document.getElementById("result").innerHTML=
+players[player]+" rolled "+num;
 
 if(num!==6){
 player=(player+1)%4;
 }
 
-
-
-
-
 document.getElementById("turn").innerHTML=
 players[player]+" Turn";
-
-},500);
-
 }
 </script>
 
