@@ -117,19 +117,19 @@ box-shadow:0 0 30px cyan;
 z-index:2;
 }
 .red-token{
-background:#ff0000;
+background:#e0e0e0;
 }
 
 .green-token{
-background:#00ff00;
+background:#e0e0e0;
 }
 
 .yellow-token{
-background:#ffff00;
+background:#e0e0e0;
 }
 
 .blue-token{
-background:#0099ff;
+background:#e0e0e0;
 }
 
 .active-token{
