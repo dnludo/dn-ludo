@@ -198,16 +198,17 @@ dice.innerHTML=num;
 
 dice.classList.remove("shake");
 
-if(num!==6){
+if(num!=6){
 player=(player+1)%4;
 }
+
+
 
 document.getElementById("turn").innerHTML=
 players[player]+" Turn";
 
 },500);
 
-}
 }
 </script>
 
