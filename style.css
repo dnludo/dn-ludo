@@ -118,6 +118,21 @@ z-index:2;
 }
 .red-token{
 background:#ff0000;
-border:3px solid white;
-box-shadow:0 0 10px red;
+}
+
+.green-token{
+background:#00ff00;
+}
+
+.yellow-token{
+background:#ffff00;
+}
+
+.blue-token{
+background:#0099ff;
+}
+
+.active-token{
+border:5px solid white;
+box-shadow:0 0 20px white;
 }
