@@ -14,6 +14,9 @@ const redHome = document.getElementById("redHome");
 const greenHome = document.getElementById("greenHome");
 const yellowHome = document.getElementById("yellowHome");
 const blueHome = document.getElementById("blueHome");
+const redToken = document.getElementById("redToken");
+
+let redPosition = 0;
 rollBtn.addEventListener("click", rollDice);
 
 function rollDice(){
