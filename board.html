@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DN Ludo Board</title>
+<title>DN Ludo Classic</title>
 
 <style>
 body{
 margin:0;
-background:#0b0b3b;
+background:#0a0a4f;
 font-family:Arial,sans-serif;
 text-align:center;
 color:white;
@@ -16,43 +16,74 @@ color:white;
 
 h1{
 color:gold;
-margin-top:15px;
+margin:15px 0;
 }
 
 .board{
-width:340px;
-height:340px;
-margin:20px auto;
+width:360px;
+height:360px;
+margin:auto;
 display:grid;
-grid-template-columns:1fr 1fr;
-grid-template-rows:1fr 1fr;
+grid-template-columns:repeat(3,1fr);
+grid-template-rows:repeat(3,1fr);
 border:4px solid white;
 }
 
-.red{background:red;}
-.green{background:green;}
-.yellow{background:gold;}
-.blue{background:blue;}
+.red{background:#ff2222;}
+.green{background:#00aa00;}
+.yellow{background:#ffd700;}
+.blue{background:#0066ff;}
+.center{background:white;}
 
 .home{
-margin:20px;
+width:70%;
+height:70%;
 background:white;
-border-radius:10px;
-height:120px;
+margin:auto;
+margin-top:15%;
+border-radius:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+gap:10px;
+padding:10px;
 }
 
-.dice{
-font-size:60px;
-margin-top:20px;
+.token{
+width:28px;
+height:28px;
+border-radius:50%;
+margin:auto;
 }
 
-.roll{
-padding:15px 35px;
+.r{background:red;}
+.g{background:green;}
+.y{background:gold;}
+.b{background:blue;}
+
+.center{
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:40px;
+}
+
+.controls{
+margin-top:25px;
+}
+
+#dice{
+font-size:55px;
+margin-bottom:15px;
+}
+
+button{
+padding:15px 40px;
 font-size:20px;
 font-weight:bold;
 background:gold;
 border:none;
-border-radius:30px;
+border-radius:40px;
 }
 </style>
 </head>
@@ -62,22 +93,76 @@ border-radius:30px;
 <h1>🎲 DN LUDO</h1>
 
 <div class="board">
-<div class="red"><div class="home"></div></div>
-<div class="green"><div class="home"></div></div>
-<div class="blue"><div class="home"></div></div>
-<div class="yellow"><div class="home"></div></div>
+
+<div class="red">
+<div class="home">
+<div class="token r"></div>
+<div class="token r"></div>
+<div class="token r"></div>
+<div class="token r"></div>
+</div>
 </div>
 
-<div class="dice" id="dice">🎲</div>
+<div></div>
 
-<button class="roll" onclick="rollDice()">
+<div class="green">
+<div class="home">
+<div class="token g"></div>
+<div class="token g"></div>
+<div class="token g"></div>
+<div class="token g"></div>
+</div>
+</div>
+
+<div></div>
+
+<div class="center">★</div>
+
+<div></div>
+
+<div class="blue">
+<div class="home">
+<div class="token b"></div>
+<div class="token b"></div>
+<div class="token b"></div>
+<div class="token b"></div>
+</div>
+</div>
+
+<div></div>
+
+<div class="yellow">
+<div class="home">
+<div class="token y"></div>
+<div class="token y"></div>
+<div class="token y"></div>
+<div class="token y"></div>
+</div>
+</div>
+
+</div>
+
+<div class="controls">
+<div id="dice">🎲</div>
+
+<button onclick="rollDice()">
 ROLL DICE
 </button>
 
+<h3 id="turn">Red Turn</h3>
+</div>
+
 <script>
+let player=0;
+let players=["Red","Green","Yellow","Blue"];
+
 function rollDice(){
 let num=Math.floor(Math.random()*6)+1;
 document.getElementById("dice").innerHTML=num;
+
+player=(player+1)%4;
+document.getElementById("turn").innerHTML=
+players[player]+" Turn";
 }
 </script>
 
