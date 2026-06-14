@@ -31,6 +31,6 @@ currentPlayer = 0;
 }
 
 turnText.innerHTML =
-players[currentPlayer] + " Turn";
+"Current Turn: " + players[currentPlayer];
 
 }
