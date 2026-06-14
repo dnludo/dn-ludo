@@ -50,18 +50,22 @@ blueHome.classList.remove("active-blue");
 
 if(players[currentPlayer] === "Red"){
 redHome.classList.add("active-red");
+redToken.classList.add("active-token");
 }
 
 if(players[currentPlayer] === "Green"){
 greenHome.classList.add("active-green");
+greenToken.classList.add("active-token");
 }
 
 if(players[currentPlayer] === "Yellow"){
 yellowHome.classList.add("active-yellow");
+yellowToken.classList.add("active-token");
 }
 
 if(players[currentPlayer] === "Blue"){
 blueHome.classList.add("active-blue");
+blueToken.classList.add("active-token");
 }
 
 }
