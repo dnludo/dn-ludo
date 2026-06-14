@@ -25,7 +25,7 @@ let number = Math.floor(Math.random()*6)+1;
 
 dice.innerHTML = number;
 
-document.getElementById("status").textContent = players[currentPlayer] + " rolled " + number;
+
 
 
 
@@ -35,7 +35,8 @@ if(currentPlayer > 3){
 currentPlayer = 0;
 }
 }
-
+document.getElementById("status").textContent =
+players[currentPlayer] + "'s turn";
 turnText.innerHTML =
 
 "Current Turn: " + players[currentPlayer];
