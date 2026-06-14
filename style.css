@@ -97,3 +97,22 @@ cursor:pointer;
 #turnText{
 font-size:40px;
 }
+.active-red{
+box-shadow:0 0 30px red;
+z-index:2;
+}
+
+.active-green{
+box-shadow:0 0 30px lime;
+z-index:2;
+}
+
+.active-yellow{
+box-shadow:0 0 30px yellow;
+z-index:2;
+}
+
+.active-blue{
+box-shadow:0 0 30px cyan;
+z-index:2;
+}
