@@ -71,6 +71,16 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
+width:180px;
+height:180px;
+background:white;
+border:4px solid #333;
+z-index:1;
+}
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
 font-size:70px;
 font-weight:bold;
 color:black;
@@ -136,16 +146,4 @@ background:#e0e0e0;
 .active-token{
 border:5px solid white;
 box-shadow:0 0 20px white;
-}
-
-#path{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:180px;
-height:180px;
-background:white;
-border:4px solid #333;
-z-index:1;
 }
