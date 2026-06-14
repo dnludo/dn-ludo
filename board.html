@@ -88,6 +88,17 @@ background:gold;
 border:none;
 border-radius:40px;
 }
+@keyframes shake {
+0% {transform:rotate(0deg);}
+25% {transform:rotate(20deg);}
+50% {transform:rotate(-20deg);}
+75% {transform:rotate(20deg);}
+100% {transform:rotate(0deg);}
+}
+
+.shake{
+animation:shake 0.5s;
+}
 </style>
 </head>
 
@@ -174,12 +185,29 @@ let player=0;
 let players=["Red","Green","Yellow","Blue"];
 
 function rollDice(){
-let num=Math.floor(Math.random()*6)+1;
-document.getElementById("dice").innerHTML=num;
 
+let dice=document.getElementById("dice");
+
+dice.classList.add("shake");
+
+setTimeout(()=>{
+
+let num=Math.floor(Math.random()*6)+1;
+
+dice.innerHTML=num;
+
+dice.classList.remove("shake");
+
+if(num!==6){
 player=(player+1)%4;
+}
+
 document.getElementById("turn").innerHTML=
 players[player]+" Turn";
+
+},500);
+
+}
 }
 </script>
 
