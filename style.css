@@ -1,143 +1,18 @@
 body{
 margin:0;
-padding:0;
+padding:20px;
 background:#0b0b63;
-font-family:Arial,sans-serif;
-color:white;
-text-align:center;
-}
-
-.logo{
-margin:20px 0;
-font-size:42px;
-color:gold;
-}
-
-.game-container{
 display:flex;
-flex-direction:column;
+justify-content:center;
 align-items:center;
+min-height:100vh;
 }
 
 #board{
 width:90vw;
-max-width:650px;
+max-width:700px;
 height:90vw;
-max-height:650px;
+max-height:700px;
 background:white;
-border:6px solid #ccc;
-position:relative;
-overflow:hidden;
-display:grid;
-grid-template-columns:1fr 1fr;
-grid-template-rows:1fr 1fr;
-}
-
-.home{
-display:grid;
-grid-template-columns:1fr 1fr;
-grid-template-rows:1fr 1fr;
-padding:25px;
-gap:15px;
-}
-
-.red{
-background:red;
-}
-
-.green{
-background:green;
-}
-
-.yellow{
-background:gold;
-}
-
-.blue{
-background:royalblue;
-}
-
-.token{
-background:white;
-border-radius:50%;
-width:45px;
-height:45px;
-margin:auto;
-border:3px solid #333;
-}
-
-.center-star{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:180px;
-height:180px;
-background:white;
-border:4px solid #333;
-font-size:70px;
-font-weight:bold;
-color:black;
-z-index:1;
-}
-.controls{
-margin-top:25px;
-}
-
-#dice{
-font-size:90px;
-margin:20px;
-}
-
-#rollBtn{
-padding:15px 40px;
-font-size:22px;
-border:none;
-border-radius:50px;
-background:gold;
-font-weight:bold;
-cursor:pointer;
-}
-
-#turnText{
-font-size:40px;
-}
-.active-red{
-box-shadow:0 0 30px red;
-z-index:2;
-}
-
-.active-green{
-box-shadow:0 0 30px lime;
-z-index:2;
-}
-
-.active-yellow{
-box-shadow:0 0 30px yellow;
-z-index:2;
-}
-
-.active-blue{
-box-shadow:0 0 30px cyan;
-z-index:2;
-}
-.red-token{
-background:#e0e0e0;
-}
-
-.green-token{
-background:#e0e0e0;
-}
-
-.yellow-token{
-background:#e0e0e0;
-}
-
-.blue-token{
-background:#e0e0e0;
-}
-
-.active-token{
-border:5px solid white;
-box-shadow:0 0 20px white;
+border:4px solid black;
 }
