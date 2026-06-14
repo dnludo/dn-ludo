@@ -1,33 +1,34 @@
-const board = document.getElementById("board");
+let currentPlayer = 0;
 
-for(let i=0;i<225;i++){
-    const cell=document.createElement("div");
-    cell.classList.add("cell");
+const players = [
+"Red",
+"Green",
+"Yellow",
+"Blue"
+];
 
-    if(i<30) cell.classList.add("red");
-    else if(i<60) cell.classList.add("green");
-    else if(i<90) cell.classList.add("yellow");
-    else if(i<120) cell.classList.add("blue");
+const dice = document.getElementById("dice");
+const rollBtn = document.getElementById("rollBtn");
+const turnText = document.getElementById("turnText");
 
-    board.appendChild(cell);
-}
-
-let currentPlayer=0;
-const players=["Red","Green","Yellow","Blue"];
+rollBtn.addEventListener("click", rollDice);
 
 function rollDice(){
 
-    let num=Math.floor(Math.random()*6)+1;
+let number = Math.floor(Math.random()*6)+1;
 
-    document.getElementById("dice").innerHTML=num;
+dice.innerHTML = number;
 
-    document.getElementById("status").innerHTML=
-    players[currentPlayer]+" rolled "+num;
+alert(players[currentPlayer] + " rolled " + number);
 
-    if(num!==6){
-        currentPlayer=(currentPlayer+1)%4;
-    }
+if(number !== 6){
+currentPlayer++;
+if(currentPlayer > 3){
+currentPlayer = 0;
+}
+}
 
-    document.getElementById("turn").innerHTML=
-    players[currentPlayer]+" Turn";
+turnText.innerHTML =
+players[currentPlayer] + " Turn";
+
 }
