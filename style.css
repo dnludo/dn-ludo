@@ -57,3 +57,11 @@ body{
   background:white;
   border:3px solid black;
 }
+.home-box{
+  background:pink !important;
+  z-index:999 !important;
+}
+
+.token{
+  background:black !important;
+}
