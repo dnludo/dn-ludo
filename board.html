@@ -189,9 +189,9 @@ function rollDice(){
 let dice=document.getElementById("dice");
 
 dice.classList.add("shake");
-
+dice.innerHTML="🎲";
 setTimeout(()=>{
-
+dice.classList.add("shake");
 let num=Math.floor(Math.random()*6)+1;
 
 dice.innerHTML=num;
