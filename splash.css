@@ -1,16 +1,29 @@
-document.getElementById("app").innerHTML = `
-<div class="splash-screen">
-    <h1>DN LUDO</h1>
-    <p>Presented by HK Games & Co.</p>
+.splash-screen{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
 
-    <button id="playBtn">
-        PLAY NOW
-    </button>
-</div>
-`;
+.splash-screen h1{
+font-size:60px;
+color:gold;
+margin-bottom:15px;
+}
 
-document
-.getElementById("playBtn")
-.addEventListener("click",function(){
-    alert("DN Ludo Main Menu Coming Soon");
-});
+.splash-screen p{
+font-size:18px;
+margin-bottom:30px;
+}
+
+.splash-screen button{
+padding:15px 40px;
+border:none;
+border-radius:10px;
+background:gold;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
