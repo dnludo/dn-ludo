@@ -83,6 +83,11 @@ document.getElementById("app").innerHTML = `
 
 <div class="center-star">⭐</div>
 
+<div class="token red-token"></div>
+<div class="token green-token"></div>
+<div class="token yellow-token"></div>
+<div class="token blue-token"></div>
+
 </div>
 
 <h2 id="diceValue">🎲 1</h2>
