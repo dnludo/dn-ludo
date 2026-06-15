@@ -73,13 +73,12 @@ position:relative;
   width:180px;
   height:180px;
   transform:translate(-50%,-50%);
-  background:
-    conic-gradient(
-      red 0deg 90deg,
-      green 90deg 180deg,
-      yellow 180deg 270deg,
-      royalblue 270deg 360deg
-    );
   border:3px solid black;
-  z-index:10;
+  background:
+  conic-gradient(
+    red 0deg 90deg,
+    green 90deg 180deg,
+    gold 180deg 270deg,
+    royalblue 270deg 360deg
+  );
 }
