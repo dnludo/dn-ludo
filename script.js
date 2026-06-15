@@ -1,3 +1,6 @@
+let currentTurn = 0;
+let playerColors = [];
+
 document.getElementById("app").innerHTML = `
 <div class="splash-screen">
     <h1>DN LUDO</h1>
@@ -50,6 +53,20 @@ function startGame(players) {
 
 window.totalPlayers = players;
 
+if(players === 2){
+playerColors = ["Red","Green"];
+}
+
+if(players === 3){
+playerColors = ["Red","Green","Yellow"];
+}
+
+if(players === 4){
+playerColors = ["Red","Green","Yellow","Blue"];
+}
+
+currentTurn = 0;
+
 document.getElementById("app").innerHTML = `
 <div class="menu-screen">
 
@@ -74,6 +91,7 @@ document
 }
 
 function showBoard() {
+
 document.getElementById("app").innerHTML = `
 <div class="board-screen">
 
@@ -92,6 +110,10 @@ document.getElementById("app").innerHTML = `
 <div class="token blue-token"></div>
 
 </div>
+
+<h2 id="turnText">
+Current Turn: ${playerColors[currentTurn]}
+</h2>
 
 <h2 id="diceValue">🎲 1</h2>
 
@@ -117,5 +139,14 @@ const dice = Math.floor(Math.random() * 6) + 1;
 
 document.getElementById("diceValue").innerHTML =
 "🎲 " + dice;
+
+currentTurn++;
+
+if(currentTurn >= playerColors.length){
+currentTurn = 0;
+}
+
+document.getElementById("turnText").innerHTML =
+"Current Turn: " + playerColors[currentTurn];
 
 }
