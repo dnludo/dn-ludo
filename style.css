@@ -79,3 +79,22 @@ position:relative;
   background:white;
   border:1px solid black;
 }
+
+#controls{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+}
+
+#rollDice{
+    padding:12px 20px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+#diceValue{
+    margin-top:10px;
+    color:white;
+}
