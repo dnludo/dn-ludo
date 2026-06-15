@@ -97,17 +97,35 @@ document.getElementById("app").innerHTML = `
 
 <div class="board">
 
-<div class="home red"></div>
-<div class="home green"></div>
-<div class="home yellow"></div>
-<div class="home blue"></div>
+<div class="home red">
+<div class="token r1"></div>
+<div class="token r2"></div>
+<div class="token r3"></div>
+<div class="token r4"></div>
+</div>
+
+<div class="home green">
+<div class="token g1"></div>
+<div class="token g2"></div>
+<div class="token g3"></div>
+<div class="token g4"></div>
+</div>
+
+<div class="home yellow">
+<div class="token y1"></div>
+<div class="token y2"></div>
+<div class="token y3"></div>
+<div class="token y4"></div>
+</div>
+
+<div class="home blue">
+<div class="token b1"></div>
+<div class="token b2"></div>
+<div class="token b3"></div>
+<div class="token b4"></div>
+</div>
 
 <div class="center-star">⭐</div>
-
-<div class="token red-token"></div>
-<div class="token green-token"></div>
-<div class="token yellow-token"></div>
-<div class="token blue-token"></div>
 
 </div>
 
@@ -131,22 +149,4 @@ Main Menu
 document
 .getElementById("rollDiceBtn")
 .addEventListener("click", rollDice);
-}
-
-function rollDice() {
-
-const dice = Math.floor(Math.random() * 6) + 1;
-
-document.getElementById("diceValue").innerHTML =
-"🎲 " + dice;
-
-currentTurn++;
-
-if(currentTurn >= playerColors.length){
-currentTurn = 0;
-}
-
-document.getElementById("turnText").innerHTML =
-"Current Turn: " + playerColors[currentTurn];
-
 }
