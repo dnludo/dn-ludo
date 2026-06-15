@@ -150,3 +150,21 @@ document
 .getElementById("rollDiceBtn")
 .addEventListener("click", rollDice);
 }
+
+function rollDice() {
+
+const dice = Math.floor(Math.random() * 6) + 1;
+
+document.getElementById("diceValue").innerHTML =
+"🎲 " + dice;
+
+currentTurn++;
+
+if(currentTurn >= playerColors.length){
+currentTurn = 0;
+}
+
+document.getElementById("turnText").innerHTML =
+"Current Turn: " + playerColors[currentTurn];
+
+}
