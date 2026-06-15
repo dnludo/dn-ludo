@@ -72,11 +72,20 @@ document
 
 function showBoard() {
 document.getElementById("app").innerHTML = `
-<div class="menu-screen">
+<div class="board-screen">
 
-<h1>LUDO BOARD</h1>
+<div class="board">
 
-<p>Board Coming Soon</p>
+<div class="home red"></div>
+<div class="home green"></div>
+<div class="home yellow"></div>
+<div class="home blue"></div>
+
+<div class="center-star">
+⭐
+</div>
+
+</div>
 
 <button class="menu-btn" onclick="showMenu()">
 Main Menu
