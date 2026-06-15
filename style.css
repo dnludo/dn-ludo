@@ -86,12 +86,14 @@ position:relative;
     border-right:90px solid transparent;
     border-bottom:90px solid red;
     top:0;
+    left:0;
 }
 
 .green-tri{
     border-top:90px solid transparent;
     border-bottom:90px solid transparent;
     border-left:90px solid green;
+    top:0;
     right:0;
 }
 
@@ -100,11 +102,13 @@ position:relative;
     border-right:90px solid transparent;
     border-top:90px solid royalblue;
     bottom:0;
+    left:0;
 }
 
 .yellow-tri{
     border-top:90px solid transparent;
     border-bottom:90px solid transparent;
     border-right:90px solid gold;
+    top:90px;
     left:0;
 }
