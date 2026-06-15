@@ -12,7 +12,7 @@ document.getElementById("app").innerHTML = `
 document
 .getElementById("playBtn")
 .addEventListener("click",function(){
-    alert("DN Ludo Main Menu Coming Soon");
+
 });
 
 function showMenu() {
