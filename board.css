@@ -1,1 +1,49 @@
+.board-screen{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+gap:20px;
+}
 
+.board{
+width:320px;
+height:320px;
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
+position:relative;
+border:4px solid white;
+}
+
+.home{
+border:2px solid white;
+}
+
+.red{
+background:#ff4444;
+}
+
+.green{
+background:#44cc44;
+}
+
+.yellow{
+background:#ffdd33;
+}
+
+.blue{
+background:#3399ff;
+}
+
+.center-star{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:40px;
+background:white;
+padding:10px;
+border-radius:50%;
+}
