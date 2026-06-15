@@ -47,6 +47,9 @@ document.getElementById("app").innerHTML = `
 }
 
 function startGame(players) {
+
+window.totalPlayers = players;
+
 document.getElementById("app").innerHTML = `
 <div class="menu-screen">
 
