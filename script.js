@@ -81,11 +81,15 @@ document.getElementById("app").innerHTML = `
 <div class="home yellow"></div>
 <div class="home blue"></div>
 
-<div class="center-star">
-⭐
-</div>
+<div class="center-star">⭐</div>
 
 </div>
+
+<h2 id="diceValue">🎲 1</h2>
+
+<button class="menu-btn" id="rollDiceBtn">
+Roll Dice
+</button>
 
 <button class="menu-btn" onclick="showMenu()">
 Main Menu
@@ -93,4 +97,17 @@ Main Menu
 
 </div>
 `;
+
+document
+.getElementById("rollDiceBtn")
+.addEventListener("click", rollDice);
+}
+
+function rollDice() {
+
+const dice = Math.floor(Math.random() * 6) + 1;
+
+document.getElementById("diceValue").innerHTML =
+"🎲 " + dice;
+
 }
