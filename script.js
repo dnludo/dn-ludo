@@ -11,7 +11,7 @@ document.getElementById("app").innerHTML = `
 
 document
 .getElementById("playBtn")
-.addEventListener("click",function(){
+.addEventListener("click", showMenu);
 
 });
 
@@ -29,8 +29,8 @@ document.getElementById("app").innerHTML = `
 `;
 
 document
-.getElementById("playBtn")
-.addEventListener("click", showMenu);
+.getElementById("playGameBtn")
+.addEventListener("click", showPlayerSelection);
 }
 function showPlayerSelection() {
 document.getElementById("app").innerHTML = `
