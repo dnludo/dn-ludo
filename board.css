@@ -3,18 +3,18 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-height:100vh;
-gap:20px;
+min-height:100vh;
+gap:15px;
 }
 
 .board{
-width:320px;
-height:320px;
+width:500px;
+height:500px;
 display:grid;
 grid-template-columns:1fr 1fr;
 grid-template-rows:1fr 1fr;
 position:relative;
-border:4px solid white;
+border:5px solid white;
 }
 
 .home{
@@ -43,48 +43,50 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:40px;
+font-size:50px;
 background:white;
-padding:10px;
+padding:12px;
 border-radius:50%;
 z-index:20;
 }
 
 .token{
-width:20px;
-height:20px;
+width:28px;
+height:28px;
 border-radius:50%;
 border:2px solid white;
 position:absolute;
+z-index:30;
+cursor:pointer;
 }
 
-/* RED TOKENS */
+/* RED */
 
-.r1{background:red; top:25px; left:25px;}
-.r2{background:red; top:25px; left:75px;}
-.r3{background:red; top:75px; left:25px;}
-.r4{background:red; top:75px; left:75px;}
+.r1{background:red; top:40px; left:40px;}
+.r2{background:red; top:40px; left:110px;}
+.r3{background:red; top:110px; left:40px;}
+.r4{background:red; top:110px; left:110px;}
 
-/* GREEN TOKENS */
+/* GREEN */
 
-.g1{background:green; top:25px; right:25px;}
-.g2{background:green; top:25px; right:75px;}
-.g3{background:green; top:75px; right:25px;}
-.g4{background:green; top:75px; right:75px;}
+.g1{background:green; top:40px; right:40px;}
+.g2{background:green; top:40px; right:110px;}
+.g3{background:green; top:110px; right:40px;}
+.g4{background:green; top:110px; right:110px;}
 
-/* YELLOW TOKENS */
+/* YELLOW */
 
-.y1{background:yellow; bottom:25px; left:25px;}
-.y2{background:yellow; bottom:25px; left:75px;}
-.y3{background:yellow; bottom:75px; left:25px;}
-.y4{background:yellow; bottom:75px; left:75px;}
+.y1{background:yellow; bottom:40px; left:40px;}
+.y2{background:yellow; bottom:40px; left:110px;}
+.y3{background:yellow; bottom:110px; left:40px;}
+.y4{background:yellow; bottom:110px; left:110px;}
 
-/* BLUE TOKENS */
+/* BLUE */
 
-.b1{background:blue; bottom:25px; right:25px;}
-.b2{background:blue; bottom:25px; right:75px;}
-.b3{background:blue; bottom:75px; right:25px;}
-.b4{background:blue; bottom:75px; right:75px;}
+.b1{background:blue; bottom:40px; right:40px;}
+.b2{background:blue; bottom:40px; right:110px;}
+.b3{background:blue; bottom:110px; right:40px;}
+.b4{background:blue; bottom:110px; right:110px;}
 
 .track{
 position:absolute;
@@ -93,12 +95,13 @@ left:0;
 width:100%;
 height:100%;
 pointer-events:none;
+z-index:10;
 }
 
 .track-cell{
-width:20px;
-height:20px;
+width:24px;
+height:24px;
 background:white;
-border:1px solid #ccc;
+border:1px solid #999;
 position:absolute;
 }
