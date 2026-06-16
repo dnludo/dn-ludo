@@ -1,6 +1,10 @@
 let currentTurn = 0;
 let playerColors = [];
+
 let redPosition = -1;
+let greenPosition = -1;
+let yellowPosition = -1;
+let bluePosition = -1;
 
 document.getElementById("app").innerHTML = `
 <div class="splash-screen">
@@ -159,25 +163,68 @@ const dice = Math.floor(Math.random() * 6) + 1;
 document.getElementById("diceValue").innerHTML =
 "🎲 " + dice;
 
-if(playerColors[currentTurn] === "Red"){
+let currentColor = playerColors[currentTurn];
 
-if(dice === 6 && redPosition === -1){
+if(currentColor === "Red" && dice === 6 && redPosition === -1){
 
 redPosition = 0;
 
-const token =
-document.querySelector(".r1");
+const token = document.querySelector(".r1");
 
+if(token){
 token.style.top = "140px";
 token.style.left = "140px";
 }
 
 }
 
+if(currentColor === "Green" && dice === 6 && greenPosition === -1){
+
+greenPosition = 0;
+
+const token = document.querySelector(".g1");
+
+if(token){
+token.style.top = "140px";
+token.style.left = "180px";
+}
+
+}
+
+if(currentColor === "Yellow" && dice === 6 && yellowPosition === -1){
+
+yellowPosition = 0;
+
+const token = document.querySelector(".y1");
+
+if(token){
+token.style.top = "180px";
+token.style.left = "140px";
+}
+
+}
+
+if(currentColor === "Blue" && dice === 6 && bluePosition === -1){
+
+bluePosition = 0;
+
+const token = document.querySelector(".b1");
+
+if(token){
+token.style.top = "180px";
+token.style.left = "180px";
+}
+
+}
+
+if(dice !== 6){
+
 currentTurn++;
 
 if(currentTurn >= playerColors.length){
 currentTurn = 0;
+}
+
 }
 
 document.getElementById("turnText").innerHTML =
