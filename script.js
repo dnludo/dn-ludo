@@ -129,7 +129,7 @@ document.getElementById("app").innerHTML = `
 <div class="token b3"></div>
 <div class="token b4"></div>
 </div>
-
+<div class="track" id="track"></div>
 <div class="center-star">⭐</div>
 
 </div>
