@@ -1,5 +1,6 @@
 let currentTurn = 0;
 let playerColors = [];
+let redPosition = -1;
 
 document.getElementById("app").innerHTML = `
 <div class="splash-screen">
