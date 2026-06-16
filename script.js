@@ -154,6 +154,8 @@ Main Menu
 document
 .getElementById("rollDiceBtn")
 .addEventListener("click", rollDice);
+
+createTrack();
 }
 
 function rollDice() {
