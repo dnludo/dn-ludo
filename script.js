@@ -56,6 +56,13 @@ document.getElementById("app").innerHTML = `
 
 function startGame(players) {
 
+redPosition = -1;
+greenPosition = -1;
+yellowPosition = -1;
+bluePosition = -1;
+
+currentTurn = 0;
+
 window.totalPlayers = players;
 
 if(players === 2){
