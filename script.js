@@ -231,3 +231,75 @@ document.getElementById("turnText").innerHTML =
 "Current Turn: " + playerColors[currentTurn];
 
 }
+
+function createTrack(){
+
+const track =
+document.getElementById("track");
+
+if(!track) return;
+
+track.innerHTML = "";
+
+const positions = [
+
+[150,10],
+[150,35],
+[150,60],
+[150,85],
+[150,110],
+
+[175,110],
+[200,110],
+[225,110],
+[250,110],
+[275,110],
+
+[275,135],
+[275,160],
+[275,185],
+[275,210],
+[275,235],
+
+[250,235],
+[225,235],
+[200,235],
+[175,235],
+[150,235],
+
+[150,260],
+[150,285],
+
+[125,235],
+[100,235],
+[75,235],
+[50,235],
+[25,235],
+
+[25,210],
+[25,185],
+[25,160],
+[25,135],
+
+[50,110],
+[75,110],
+[100,110],
+[125,110]
+
+];
+
+positions.forEach(pos => {
+
+const cell =
+document.createElement("div");
+
+cell.className = "track-cell";
+
+cell.style.left = pos[0] + "px";
+cell.style.top = pos[1] + "px";
+
+track.appendChild(cell);
+
+});
+
+}
