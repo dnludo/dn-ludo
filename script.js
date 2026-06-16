@@ -159,6 +159,21 @@ const dice = Math.floor(Math.random() * 6) + 1;
 document.getElementById("diceValue").innerHTML =
 "🎲 " + dice;
 
+if(playerColors[currentTurn] === "Red"){
+
+if(dice === 6 && redPosition === -1){
+
+redPosition = 0;
+
+const token =
+document.querySelector(".r1");
+
+token.style.top = "140px";
+token.style.left = "140px";
+}
+
+}
+
 currentTurn++;
 
 if(currentTurn >= playerColors.length){
