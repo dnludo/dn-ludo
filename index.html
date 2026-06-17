@@ -24,15 +24,8 @@ border-radius:20px;
 box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
-h1{
-text-align:center;
-color:#08153c;
-}
-
-p{
-text-align:center;
-color:#666;
-}
+h1{text-align:center;color:#08153c;}
+p{text-align:center;color:#666;}
 
 .players{
 display:flex;
@@ -47,6 +40,7 @@ border:none;
 border-radius:10px;
 background:#eee;
 font-size:18px;
+cursor:pointer;
 }
 
 .active{
@@ -71,6 +65,7 @@ border-radius:10px;
 background:#08153c;
 color:white;
 font-size:18px;
+cursor:pointer;
 }
 </style>
 </head>
@@ -82,18 +77,61 @@ font-size:18px;
 <p>Classic pass-and-play board game</p>
 
 <div class="players">
-<button>2</button>
-<button>3</button>
-<button class="active">4</button>
+<button onclick="setPlayers(2)">2</button>
+<button onclick="setPlayers(3)">3</button>
+<button class="active" onclick="setPlayers(4)">4</button>
 </div>
 
-<input placeholder="Player 1">
-<input placeholder="Player 2">
-<input placeholder="Player 3">
-<input placeholder="Player 4">
+<input id="p1" placeholder="Player 1">
+<input id="p2" placeholder="Player 2">
+<input id="p3" placeholder="Player 3">
+<input id="p4" placeholder="Player 4">
 
-<button class="start">Start Game</button>
+<button class="start" onclick="startGame()">Start Game</button>
 </div>
+
+<script>
+
+let playerCount = 4;
+
+function setPlayers(num){
+
+playerCount = num;
+
+document.querySelectorAll(".players button").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+event.target.classList.add("active");
+
+document.getElementById("p3").style.display =
+(num >= 3) ? "block" : "none";
+
+document.getElementById("p4").style.display =
+(num == 4) ? "block" : "none";
+}
+
+function startGame(){
+
+let players=[];
+
+players.push(document.getElementById("p1").value || "Player 1");
+players.push(document.getElementById("p2").value || "Player 2");
+
+if(playerCount>=3){
+players.push(document.getElementById("p3").value || "Player 3");
+}
+
+if(playerCount==4){
+players.push(document.getElementById("p4").value || "Player 4");
+}
+
+localStorage.setItem("dnPlayers",JSON.stringify(players));
+
+alert("Game Starting!\n\n" + players.join(", "));
+}
+
+</script>
 
 </body>
 </html>
