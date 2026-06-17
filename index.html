@@ -209,6 +209,11 @@ document.getElementById("row4").style.display =
 
 function startGame(){
 
+if(playerCount != 2){
+alert("Abhi sirf 2 Player Mode available hai");
+return;
+}
+
 const players=[];
 
 players.push(
