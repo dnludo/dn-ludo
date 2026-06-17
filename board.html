@@ -1,65 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DN Ludo Board</title>
-<style>
-body{
+*{
 margin:0;
-padding:20px;
-background:#f4f1ea;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f1ea;
+padding:15px;
 text-align:center;
 }
+
+h1{
+color:#07153d;
+margin-bottom:15px;
+}
+
 .board{
-width:min(95vw,500px);
-height:min(95vw,500px);
+width:min(95vw,650px);
+height:min(95vw,650px);
 margin:auto;
 display:grid;
-grid-template-columns:1fr 80px 1fr;
-grid-template-rows:1fr 80px 1fr;
-gap:4px;
+grid-template-columns:repeat(15,1fr);
+grid-template-rows:repeat(15,1fr);
+border:2px solid #222;
+background:#fff;
 }
-.home{
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-border-radius:12px;
+
+.cell{
+border:1px solid #ddd;
 }
-.green{background:#2ecc71;}
-.yellow{background:#f1c40f;}
-.red{background:#e74c3c;}
-.blue{background:#3498db;}
-.path{
-background:white;
-border:1px solid #ccc;
-}
+
+.green-home{background:#00b050;}
+.red-home{background:#ff2d2d;}
+.yellow-home{background:#ffd400;}
+.blue-home{background:#2146c7;}
+
+.green-path{background:#00b050;}
+.red-path{background:#ff2d2d;}
+.yellow-path{background:#ffd400;}
+.blue-path{background:#2146c7;}
+
 .center{
-display:flex;
-align-items:center;
-justify-content:center;
+background:conic-gradient(
+from 45deg,
+#ffd400 0 25%,
+#2146c7 25% 50%,
+#ff2d2d 50% 75%,
+#00b050 75% 100%
+);
+}
+
+.panel{
+max-width:650px;
+margin:20px auto;
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+#dice{
+font-size:70px;
+margin:15px;
+}
+
+button{
 background:#07153d;
 color:white;
-font-size:30px;
-font-weight:bold;
+border:none;
+padding:15px 30px;
 border-radius:12px;
+font-size:20px;
+cursor:pointer;
 }
-</style>
-</head>
-<body>
-<h1>🎲 DN Ludo</h1>
-<div class="board">
-<div class="home green">🟢</div>
-<div class="path"></div>
-<div class="home yellow">🟡</div>
-<div class="path"></div>
-<div class="center">DN</div>
-<div class="path"></div>
-<div class="home red">🔴</div>
-<div class="path"></div>
-<div class="home blue">🔵</div>
-</div>
-</body>
-</html>
