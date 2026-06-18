@@ -19,11 +19,15 @@ color:#07153d;
 }
 
 .board{
-width:360px;
+width:min(95vw,600px);
+height:min(95vw,600px);
 margin:20px auto;
 display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:6px;
+grid-template-columns:repeat(15,1fr);
+grid-template-rows:repeat(15,1fr);
+border:2px solid #222;
+background:white;
+gap:0;
 }
 
 .cell{
